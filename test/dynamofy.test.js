@@ -15,6 +15,22 @@ describe('test to parse', () => {
         assert.deepEqual(dynamofied, { N: 1 });
     });
 
+    it('should parse a list of numbers', () => {
+        const dynamofied = dynamofy([ 1, 2, 3, 4 ]);
+        assert.deepEqual(dynamofied, { NS: [ 1, 2, 3, 4 ] });
+    });
+
+
+    it('should parse a list of string', () => {
+        const dynamofied = dynamofy([ 's', '2', '' ]);
+        assert.deepEqual(dynamofied, { SS: [ 's', '2', '' ] });
+    });
+
+    it('should parse a list', () => {
+        const dynamofied = dynamofy([ 's', '2', 1 ]);
+        assert.deepEqual(dynamofied, { L: [ 's', '2', 1 ] });
+    });
+
     it('should parse a buffer', () => {
         const parsed = parse({ B: Buffer('hola') });
 
@@ -35,9 +51,7 @@ describe('test to parse', () => {
             }
         }
         });
-        console.log('parsed ', parsed);
         const dynamofied = dynamofy(parsed);
-        console.log('dynamofied ', dynamofied);
         assert.deepEqual(dynamofied, { test:{
             M: {
                 string:{ S:4 }
@@ -76,11 +90,11 @@ describe('test to parse', () => {
         assert.deepEqual(dynamofied, {
             string:{ S:4 },
             number:{ N:'4' },
-            array:{ L:[ 1, 2, 3, 4 ] },
+            array:{ NS:[ 1, 2, 3, 4 ] },
             map:{ M:{
                 string:{ S:4 },
                 number:{ N:'4' },
-                array:{ L:[ 1, 2, 3, 4 ] },
+                array:{ NS:[ 1, 2, 3, 4 ] },
                 map:{ M:{
                     string: {
                         S: 2343

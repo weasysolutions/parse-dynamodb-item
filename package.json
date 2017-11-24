@@ -1,0 +1,24 @@
+{
+  "name": "parse-dynamodb-item",
+  "version": "0.0.1",
+  "description": "parse item from dynamodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/big-math-solutions/parse-dynamodb-item.git"
+  },
+  "keywords": [
+    "dynamodb",
+    "parse",
+    "item"
+  ],
+  "author": "Jesus Cereceres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/big-math-solutions/parse-dynamodb-item/issues"
+  },
+  "homepage": "https://github.com/big-math-solutions/parse-dynamodb-item#readme"
+}

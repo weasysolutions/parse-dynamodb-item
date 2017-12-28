@@ -18,7 +18,10 @@ The api export two methods, one to parse item from dynamodb and other to parse i
 # Usage
 ```js
 const parse = require('parse-dynamodb-item/parse');
+// or const {parse} = require('parse-dynamodb-item');
 const dynamofy = require('parse-dynamodb-item/dynamofy');
+// or const {dynamofy} = require('parse-dynamodb-item');
+
 
 
 const parsed = parse({ S: 'string' });
@@ -104,3 +107,15 @@ assert.deepEqual(dynamofied, {
 ```
 
 
+
+
+With AWS-SDK
+
+```js
+const parse = require('parse-dynamodb-item/parse');
+const dynamodb = new AWS.DynamoDB();
+const params = { TableName };
+
+module.exports = () => dynamodb.scan(params).promise()
+    .then(({ Items }) => Items.map(parse))
+```

@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/big-math-solutions/parse-dynamodb-item/issues"
   },
-  "homepage": "https://github.com/big-math-solutions/parse-dynamodb-item#readme"
+  "homepage": "https://github.com/big-math-solutions/parse-dynamodb-item#readme",
+  "devDependencies": {
+    "mocha": "^5.1.1"
+  }
 }

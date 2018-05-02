@@ -4,7 +4,6 @@ parse dynamodb items
 # install
 
 ```bash
-
 npm install parse-dynamodb-item
 ```
 # API

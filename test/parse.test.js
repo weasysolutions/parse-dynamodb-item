@@ -69,4 +69,40 @@ describe('test to parse', () => {
              array: [ 1, 2, 3, 4 ],
              map: { string: '2343' } } });
     });
+
+    it('should parse string set', () => {
+        const parsed = parse({
+            SS: [ 'one', 'two', 'three' ]
+        });
+        assert.deepEqual(parsed, [ 'one', 'two', 'three' ]);
+    });
+
+    it('should parse a map with a string set', () => {
+        const parsed = parse({
+            stringSet: {
+                SS: [ 'one', 'two', 'three' ]
+            }
+        });
+        assert.deepEqual(parsed, {
+            stringSet: [ 'one', 'two', 'three' ]
+        });
+    });
+
+    it('should parse number set', () => {
+        const parsed = parse({
+            NS: [ '1', '2', '3', '4.5' ]
+        });
+        assert.deepEqual(parsed, [ 1, 2, 3, 4.5 ]);
+    });
+
+    it('should parse a map with a number set', () => {
+        const parsed = parse({
+            numberSet: {
+                SS: [ '1', '2', '3', '4.5' ]
+            }
+        });
+        assert.deepEqual(parsed, {
+            numberSet: [ 1, 2, 3, 4.5 ]
+        });
+    });
 });

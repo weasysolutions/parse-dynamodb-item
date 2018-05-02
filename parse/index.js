@@ -19,7 +19,9 @@ const parse = module.exports = (item) => Object.keys(item).reduce((reduced, prop
     else if (prop === 'N') return parseNumber(item[prop]);
     else if (prop === 'BOOL') return parseBool(item[prop]);
     else if (prop === 'NULL') return parseNull(item[prop]);
-    else if (item[prop].L || item[prop].SS || item[prop].NS) reduced[prop] = parseSet(item[prop].L);
+    else if (item[prop].L) reduced[prop] = parseSet(item[prop].L);
+    else if (item[prop].SS) reduced[prop] = parseSet(item[prop].SS);
+    else if (item[prop].NS) reduced[prop] = parseSet(item[prop].NS);
     else if (item[prop].B) reduced[prop] = parseBuffer(item[prop].B);
     else if (item[prop].S) reduced[prop] = parseString(item[prop].S);
     else if (item[prop].M) reduced[prop] = parseMap(item[prop].M, parse);

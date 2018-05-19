@@ -59,15 +59,19 @@ describe('test to parse', () => {
                 } },
             } },
         });
+        console.log('parsed ', parsed);
         assert.deepEqual(parsed, {
             string: '4',
             number: 4,
             array: [ 1, 2, 3, 4 ],
-            map:
-         { string: '4',
-             number: 4,
-             array: [ 1, 2, 3, 4 ],
-             map: { string: '2343' } } });
+            map:{ string: '4',
+                number: 4,
+                array: [ 1, 2, 3, 4 ],
+                map: {
+                    string: '2343'
+                }
+            }
+        });
     });
 
     it('should parse string set', () => {

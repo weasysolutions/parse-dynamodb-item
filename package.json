@@ -4,7 +4,7 @@
   "description": "parse item from dynamodb",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha $(find test  -name *.test.js)"
   },
   "repository": {
     "type": "git",

@@ -59,7 +59,6 @@ describe('test to parse', () => {
                 } },
             } },
         });
-        console.log('parsed ', parsed);
         assert.deepEqual(parsed, {
             string: '4',
             number: 4,

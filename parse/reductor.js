@@ -7,7 +7,6 @@ const parseBool = require('./parse-bool');
 const parseNull = require('./parse-null');
 
 module.exports = (item, parse) => (reduced, prop) => {
-    console.log('reduces ', reduced);
     if (!item.hasOwnProperty(prop)) return;
     if (prop === 'L' || prop === 'SS' || prop === 'NS') return parseSet(item[prop], parse);
     if (prop === 'B') return parseBuffer(item[prop]);

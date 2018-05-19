@@ -1,6 +1,6 @@
 {
   "name": "parse-dynamodb-item",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "parse item from dynamodb",
   "main": "index.js",
   "scripts": {

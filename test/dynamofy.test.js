@@ -12,12 +12,12 @@ describe('test to parse', () => {
     it('should parse a number', () => {
         const parsed = parse({ N: '1' });
         const dynamofied = dynamofy(parsed);
-        assert.deepEqual(dynamofied, { N: 1 });
+        assert.deepEqual(dynamofied, { N: '1' });
     });
 
     it('should parse a list of numbers', () => {
         const dynamofied = dynamofy([ 1, 2, 3, 4 ]);
-        assert.deepEqual(dynamofied, { NS: [ 1, 2, 3, 4 ] });
+        assert.deepEqual(dynamofied, { NS: [ '1', '2', '3', '4' ] });
     });
 
 
@@ -90,11 +90,11 @@ describe('test to parse', () => {
         assert.deepEqual(dynamofied, {
             string:{ S:4 },
             number:{ N:'4' },
-            array:{ NS:[ 1, 2, 3, 4 ] },
+            array:{ NS:[ '1', '2', '3', '4' ] },
             map:{ M:{
                 string:{ S:4 },
                 number:{ N:'4' },
-                array:{ NS:[ 1, 2, 3, 4 ] },
+                array:{ NS:[ '1', '2', '3', '4' ] },
                 map:{ M:{
                     string: {
                         S: 2343

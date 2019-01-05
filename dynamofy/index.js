@@ -10,12 +10,13 @@ const dynamofyBool = require('./dynamo-bool');
 const dynamofyNull = require('./dynamo-null');
 
 const dynamofy = module.exports = function(item, i = 0) {
+    const type = typeof item
     if (isArray(item)) return dynamofySet(item);
     if (isBuffer(item)) return dynamofyBuffer(item);
 
-    if (typeof item === 'string') return dynamofyString(item);
-    if (typeof item === 'object') return dynamofyMap(item, dynamofy, i);
-    if (typeof item === 'number') return dynamofyNumber(item);
-    if (typeof item === 'boolean') return dynamofyBool(item);
+    if (type === 'string') return dynamofyString(item);
+    if (type === 'object') return dynamofyMap(item, dynamofy, i);
+    if (type === 'number') return dynamofyNumber(item);
+    if (type === 'boolean') return dynamofyBool(item);
     if (item === null) return dynamofyNull(item);
 };

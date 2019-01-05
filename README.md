@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/big-math-solutions/parse-dynamodb-item.svg?branch=master)](https://travis-ci.org/big-math-solutions/parse-dynamodb-item)
+
 # parse-dynamodb-item
 parse dynamodb items
 

@@ -8,5 +8,5 @@ module.exports = (list) => {
         if (type !== current) return { L:list };
     }
     if (type === 'string') return { SS: list };
-    if (type === 'number') return { NS: list };
+    if (type === 'number') return { NS: list.map(item => item.toString()) };
 };

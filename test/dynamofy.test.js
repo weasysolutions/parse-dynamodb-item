@@ -75,7 +75,7 @@ describe('test to parse', () => {
     it('should parse a map with string', () => {
         const parsed = parse({
             string: { S: 4 },
-            number: { N: '4' },
+            number: { N: 4 },
             array: { L: [1, 2, 3, 4] },
             map: {
                 M: {
